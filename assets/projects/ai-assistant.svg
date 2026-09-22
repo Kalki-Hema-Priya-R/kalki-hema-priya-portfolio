@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#081426"/>
+    <stop offset="1" stop-color="#141b3b"/>
+  </linearGradient>
+  <linearGradient id="accent" x1="0" x2="1">
+    <stop offset="0" stop-color="#20dcb0"/>
+    <stop offset="1" stop-color="#6f7cff"/>
+  </linearGradient>
+</defs>
+
+<!-- Clean outer canvas -->
+<rect width="1200" height="600" rx="26" fill="url(#bg)"/>
+
+<!-- Main dashboard box -->
+<rect x="34" y="32" width="1132" height="536" rx="22" fill="#0b1429" stroke="#263a60" stroke-width="2"/>
+
+<!-- Header -->
+<circle cx="72" cy="76" r="11" fill="#20dcb0"/>
+<text x="98" y="84" fill="#eef4ff" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700">AI Employee Support Assistant</text>
+<text x="98" y="111" fill="#8495b5" font-family="Arial, Helvetica, sans-serif" font-size="13">HR questions  •  Leave  •  Attendance  •  Payroll</text>
+
+<!-- Chat panel -->
+<rect x="72" y="145" width="700" height="365" rx="18" fill="#101c35" stroke="#2b3e61" stroke-width="2"/>
+
+<!-- User question -->
+<rect x="102" y="176" width="480" height="64" rx="14" fill="#182844"/>
+<circle cx="130" cy="208" r="17" fill="url(#accent)"/>
+<text x="158" y="202" fill="#edf3ff" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700">Employee Question</text>
+<text x="158" y="222" fill="#93a3c0" font-family="Arial, Helvetica, sans-serif" font-size="12">How many leave days do I have?</text>
+
+<!-- AI response -->
+<rect x="210" y="268" width="520" height="112" rx="16" fill="#191a3d" stroke="#4b4b87" stroke-width="2"/>
+<text x="238" y="299" fill="#eef1ff" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700">AI Assistant</text>
+<text x="238" y="326" fill="#a5afd0" font-family="Arial, Helvetica, sans-serif" font-size="12">You have 12 annual leave days remaining.</text>
+<text x="238" y="349" fill="#a5afd0" font-family="Arial, Helvetica, sans-serif" font-size="12">Would you like help with a leave request?</text>
+
+<!-- Input -->
+<rect x="102" y="422" width="630" height="58" rx="13" fill="#0b162d" stroke="#2b3e61" stroke-width="2"/>
+<text x="126" y="457" fill="#687c9e" font-family="Arial, Helvetica, sans-serif" font-size="12">Ask about leave, attendance or payroll...</text>
+
+<!-- AI capability card -->
+<rect x="804" y="145" width="330" height="365" rx="18" fill="#101c35" stroke="#2b3e61" stroke-width="2"/>
+<circle cx="969" cy="232" r="58" fill="#141a38" stroke="url(#accent)" stroke-width="5"/>
+<circle cx="950" cy="224" r="6" fill="#20dcb0"/>
+<circle cx="988" cy="224" r="6" fill="#7a72ff"/>
+<path d="M943 251 Q969 271 995 251" fill="none" stroke="#e4eaff" stroke-width="5" stroke-linecap="round"/>
+<text x="888" y="333" fill="#eef4ff" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700">Spring AI</text>
+<text x="878" y="361" fill="#8395b4" font-family="Arial, Helvetica, sans-serif" font-size="12">Spring Boot  •  Security</text>
+<text x="884" y="384" fill="#8395b4" font-family="Arial, Helvetica, sans-serif" font-size="12">Hibernate  •  MySQL  •  JWT</text>
+<rect x="880" y="424" width="178" height="42" rx="10" fill="#172744"/>
+<text x="913" y="451" fill="#20dcb0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700">AI READY</text>
+</svg>
