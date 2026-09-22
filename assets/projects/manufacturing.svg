@@ -1,1 +1,14 @@
-
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#071426"/><stop offset="1" stop-color="#101b36"/></linearGradient><linearGradient id="g" x1="0" x2="1"><stop stop-color="#20e0ad"/><stop offset="1" stop-color="#5c8dff"/></linearGradient></defs>
+<rect width="1200" height="600" rx="28" fill="url(#bg)"/><rect x="42" y="38" width="1116" height="524" rx="20" fill="#0a1428" stroke="#233453" stroke-width="3"/>
+<rect x="42" y="38" width="220" height="524" rx="20" fill="#081122"/><circle cx="83" cy="78" r="11" fill="#20e0ad"/><text x="102" y="84" fill="#eaf2ff" font-family="Arial" font-size="16" font-weight="700">Manufacturing ERP</text>
+<rect x="70" y="125" width="160" height="42" rx="10" fill="#122340"/><text x="88" y="152" fill="#20e0ad" font-family="Arial" font-size="15">Dashboard</text>
+<g fill="#6d7f9e" font-family="Arial" font-size="14"><text x="88" y="202">Materials</text><text x="88" y="242">Procurement</text><text x="88" y="282">Inventory</text><text x="88" y="322">Production</text><text x="88" y="362">Work Orders</text><text x="88" y="402">Sales</text></g>
+<text x="292" y="92" fill="#eaf2ff" font-family="Arial" font-size="25" font-weight="700">Production Overview</text>
+<g><rect x="292" y="120" width="245" height="105" rx="15" fill="#101e35" stroke="#263957"/><text x="314" y="151" fill="#8195b5" font-family="Arial" font-size="13">TODAY'S OUTPUT</text><text x="314" y="193" fill="#20e0ad" font-family="Arial" font-size="34" font-weight="700">8,420 KG</text></g>
+<g><rect x="557" y="120" width="245" height="105" rx="15" fill="#101e35" stroke="#263957"/><text x="579" y="151" fill="#8195b5" font-family="Arial" font-size="13">ACTIVE JOB CARDS</text><text x="579" y="193" fill="#eaf2ff" font-family="Arial" font-size="34" font-weight="700">24</text></g>
+<g><rect x="822" y="120" width="295" height="105" rx="15" fill="#101e35" stroke="#263957"/><text x="844" y="151" fill="#8195b5" font-family="Arial" font-size="13">STOCK STATUS</text><text x="844" y="193" fill="#5c8dff" font-family="Arial" font-size="34" font-weight="700">92%</text></g>
+<rect x="292" y="255" width="825" height="260" rx="16" fill="#0e1b30" stroke="#263957"/><text x="318" y="290" fill="#dce8ff" font-family="Arial" font-size="17" font-weight="700">Plant production trend</text>
+<polyline points="330,460 430,420 530,435 630,350 730,375 830,300 930,330 1030,270 1080,285" fill="none" stroke="url(#g)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+<g fill="#6f82a1" font-family="Arial" font-size="12"><text x="325" y="485">Mon</text><text x="525" y="485">Tue</text><text x="725" y="485">Wed</text><text x="925" y="485">Thu</text><text x="1050" y="485">Fri</text></g>
+</svg>
