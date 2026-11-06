@@ -64,19 +64,17 @@ let projectPage = 0;
 
 function updateProjectCarousel() {
   if (!projectTrack || !projectCards.length) return;
-  projectPage = Math.max(0, Math.min(projectPage, projectCards.length - 1));
+  projectPage = (projectPage + projectCards.length) % projectCards.length;
   projectTrack.style.transform = `translateX(-${projectPage * 100}%)`;
   projectDots.forEach((dot, i) => dot.classList.toggle('active', i === projectPage));
-  if (projectPrev) projectPrev.disabled = projectPage === 0;
-  if (projectNext) projectNext.disabled = projectPage === projectCards.length - 1;
 }
 
 projectNext?.addEventListener('click', () => {
-  if (projectPage < projectCards.length - 1) projectPage++;
+  projectPage++;
   updateProjectCarousel();
 });
 projectPrev?.addEventListener('click', () => {
-  if (projectPage > 0) projectPage--;
+  projectPage--;
   updateProjectCarousel();
 });
 projectDots.forEach((dot, i) => dot.addEventListener('click', () => {
@@ -85,3 +83,68 @@ projectDots.forEach((dot, i) => dot.addEventListener('click', () => {
 }));
 
 updateProjectCarousel();
+
+/* Scroll progress bar + cursor glow */
+const bar = document.getElementById('progress'), glow = document.getElementById('glow');
+window.addEventListener('scroll', () => {
+  const h = document.documentElement;
+  bar.style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100) + '%';
+});
+window.addEventListener('pointermove', e => { glow.style.left = e.clientX + 'px'; glow.style.top = e.clientY + 'px'; });
+
+/* Typing role effect */
+const typed = document.getElementById('typed');
+if (typed && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const words = typed.dataset.words.split('|'); let w = 0, c = 0, del = false;
+  (function tick() {
+    const word = words[w];
+    typed.textContent = word.slice(0, c);
+    if (!del && c === word.length) { del = true; return setTimeout(tick, 1600); }
+    if (del && c === 0) { del = false; w = (w + 1) % words.length; }
+    c += del ? -1 : 1;
+    setTimeout(tick, del ? 35 : 70);
+  })();
+}
+
+/* Offline support: register service worker + connection toast */
+if ('serviceWorker' in navigator && location.protocol === 'https:') {
+  addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(() => {}));
+}
+const toast = document.createElement('div');
+toast.style.cssText = 'position:fixed;left:50%;bottom:24px;transform:translate(-50%,120px);padding:12px 22px;border-radius:999px;background:rgba(14,16,34,.95);border:1px solid rgba(255,255,255,.15);font-size:13px;z-index:200;transition:.4s;color:#fff';
+document.body.appendChild(toast);
+const showToast = (t) => { toast.textContent = t; toast.style.transform = 'translate(-50%,0)'; setTimeout(() => toast.style.transform = 'translate(-50%,120px)', 3000); };
+addEventListener('offline', () => showToast('📡 You are offline, showing saved content'));
+addEventListener('online', () => showToast('✅ Back online'));
+
+/* Carousel: endless loop, autoplay (pauses on hover/touch) and swipe */
+const carouselEl = document.querySelector('.project-carousel');
+let carouselPaused = false, touchX = 0;
+setInterval(() => { if (!carouselPaused && !document.hidden) { projectPage++; updateProjectCarousel(); } }, 6000);
+['mouseenter', 'focusin'].forEach(ev => carouselEl?.addEventListener(ev, () => carouselPaused = true));
+['mouseleave', 'focusout'].forEach(ev => carouselEl?.addEventListener(ev, () => carouselPaused = false));
+carouselEl?.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; carouselPaused = true; }, { passive: true });
+carouselEl?.addEventListener('touchend', e => {
+  const dx = e.changedTouches[0].clientX - touchX;
+  if (Math.abs(dx) > 50) { projectPage += dx < 0 ? 1 : -1; updateProjectCarousel(); }
+  setTimeout(() => carouselPaused = false, 8000);
+});
+
+/* WhatsApp button: appears after 15% scroll */
+const wa = document.getElementById('waFloat');
+const waCheck = () => { const h = document.documentElement; wa.classList.toggle('show', h.scrollTop / (h.scrollHeight - h.clientHeight) >= 0.15); };
+addEventListener('scroll', waCheck, { passive: true }); waCheck();
+
+/* Resume popup */
+const modal = document.getElementById('resumeModal'), frame = document.getElementById('resumeFrame'), openBtn = document.getElementById('openResume');
+function openResume() {
+  if (!frame.getAttribute('src')) frame.src = 'resume/Kalki-Hema-Priya-Resume.pdf#view=FitH';
+  modal.classList.add('open'); modal.setAttribute('aria-hidden', 'false'); document.body.classList.add('lock');
+  modal.querySelector('.modal-close').focus();
+}
+function closeResume() {
+  modal.classList.remove('open'); modal.setAttribute('aria-hidden', 'true'); document.body.classList.remove('lock'); openBtn?.focus();
+}
+openBtn?.addEventListener('click', e => { e.preventDefault(); openResume(); });
+modal?.addEventListener('click', e => { if (e.target === modal || e.target.closest('.modal-close')) closeResume(); });
+addEventListener('keydown', e => { if (e.key === 'Escape' && modal.classList.contains('open')) closeResume(); });

@@ -5,6 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Kalki Hema Priya R - Java Full Stack Developer Portfolio">
   <title>Kalki Hema Priya | Java Full Stack Developer</title>
+  <meta name="theme-color" content="#05060f">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="canonical" href="https://kalki-hema-priya-r.github.io/kalki-hema-priya-portfolio/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Kalki Hema Priya R | Java Full Stack Developer">
+  <meta property="og:description" content="Java Full Stack Developer: Spring Boot, Hibernate/JPA, REST APIs and MySQL. View projects and resume.">
+  <meta property="og:image" content="https://kalki-hema-priya-r.github.io/kalki-hema-priya-portfolio/assets/profile.jpg">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -12,6 +24,8 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="progress" id="progress"></div>
+  <div class="glow" id="glow"></div>
   <header class="navbar">
     <a class="logo" href="#home"><span class="logo-mark">✦</span><span class="logo-name"><span class="logo-kalki">Kalki</span> <span class="logo-hema">Hema Priya</span></span></a>
     <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
@@ -32,8 +46,9 @@
       <div class="hero-copy reveal">
         <p class="eyebrow">HELLO, I'M</p>
         <h1>Kalki <span>Hema Priya R</span></h1>
-        <h2>Java Full Stack Developer</h2>
+        <h2 id="typed" data-words="Java Full Stack Developer|Spring Boot Specialist|ERP & REST API Builder">Java Full Stack Developer</h2>
         <p class="hero-text">Java Full Stack Developer with 1+ year of professional experience building, maintaining, and supporting enterprise applications using Java, Spring Boot, Hibernate/JPA, REST APIs, JDBC, and MySQL.</p>
+        <div class="hero-stats"><div><b>1+</b><small>Years Experience</small></div><div><b>4</b><small>Featured Projects</small></div><div><b>8.9</b><small>CGPA</small></div></div>
         <div class="socials">
           <a href="https://www.linkedin.com/in/kalki-hema-priya-r/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
           <a href="https://github.com/Kalki-Hema-Priya-R" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><i class="fa-brands fa-github"></i></a>
@@ -220,7 +235,7 @@
       </div>
       <div class="contact-actions reveal">
         <a class="btn primary" href="resume/Kalki-Hema-Priya-Resume.pdf" download><i class="fa-solid fa-download"></i> Download Resume</a>
-        <a class="btn outline" href="resume/Kalki-Hema-Priya-Resume.pdf" target="_blank"><i class="fa-regular fa-eye"></i> Preview Resume In-Browser</a>
+        <a class="btn outline" href="resume/Kalki-Hema-Priya-Resume.pdf" target="_blank" id="openResume"><i class="fa-regular fa-eye"></i> Preview Resume In-Browser</a>
         <a class="btn outline talk-btn" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=kalkihemapriya.r4@gmail.com&amp;su=Java%20Developer%20Opportunity" target="_blank" rel="noopener"><i class="fa-regular fa-paper-plane"></i> Let's Talk</a>
       </div>
       <div class="contact-workspace reveal">
@@ -228,7 +243,7 @@
           <div class="contact-panel-title"><span class="contact-panel-icon"><i class="fa-regular fa-address-card"></i></span><div><small>LET'S CONNECT</small><h3>Find me online</h3></div></div>
           <a href="mailto:kalkihemapriya.r4@gmail.com"><span class="contact-icon"><i class="fa-solid fa-envelope"></i></span><span><small>EMAIL ADDRESS</small><strong>kalkihemapriya.r4@gmail.com</strong><em>Direct response within 24 hours</em></span></a>
           <a href="tel:+917708365498"><span class="contact-icon phone"><i class="fa-solid fa-phone"></i></span><span><small>PHONE</small><strong>+91 7708365498</strong><em>Available for calls &amp; conversations</em></span></a>
-          <a href="https://www.linkedin.com/in/kalki-hema-priya-r/" target="_blank" rel="noopener"><span class="contact-icon linkedin"><i class="fa-brands fa-linkedin-in"></i></span><span><small>LINKEDIN PROFILE</small><strong>linkedin.com/in/kalki-hema-priya-r</strong><em>Connect</em></span><b class="contact-side-action">Connect</b></a>
+          <a href="https://www.linkedin.com/in/kalki-hema-priya-r/" target="_blank" rel="noopener"><span class="contact-icon linkedin"><i class="fa-brands fa-linkedin-in"></i></span><span><small>LINKEDIN PROFILE</small><strong>linkedin.com/in/kalki-hema-priya-r</strong><em>Let's connect professionally</em></span><b class="contact-side-action">Connect</b></a>
           <a href="https://github.com/Kalki-Hema-Priya-R" target="_blank" rel="noopener"><span class="contact-icon github"><i class="fa-brands fa-github"></i></span><span><small>GITHUB REPOSITORY</small><strong>github.com/Kalki-Hema-Priya-R</strong><em>View projects</em></span><b class="contact-side-action">Follow</b></a>
           <div class="location-card"><span class="contact-icon location"><i class="fa-solid fa-location-dot"></i></span><span><small>LOCATION</small><strong>Chennai, India</strong><em>Open to On-site, Hybrid &amp; Remote roles</em></span></div>
         </div>
@@ -244,7 +259,34 @@
     </section>
   </main>
 
-  <footer><p>© <span id="year"></span> Kalki Hema Priya R · Java Full Stack Developer</p><a href="#home">Back to top ↑</a></footer>
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="logo" href="#home"><span class="logo-mark">✦</span><span class="logo-name"><span class="logo-kalki">Kalki</span> <span class="logo-hema">Hema Priya</span></span></a>
+        <p>Java Full Stack Developer building reliable enterprise applications with Spring Boot, Hibernate and MySQL.</p>
+        <div class="socials">
+          <a href="https://www.linkedin.com/in/kalki-hema-priya-r/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://github.com/Kalki-Hema-Priya-R" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://wa.me/917708365498" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="mailto:kalkihemapriya.r4@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Quick Links</h4><a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#contact">Contact</a></div>
+      <div class="footer-col"><h4>Get in touch</h4><a href="mailto:kalkihemapriya.r4@gmail.com">kalkihemapriya.r4@gmail.com</a><a href="tel:+917708365498">+91 7708365498</a><span>Chennai, India</span><span>Open to On-site, Hybrid &amp; Remote</span></div>
+    </div>
+    <div class="footer-bottom"><p>© <span id="year"></span> Kalki Hema Priya R · Crafted with ♥ in Chennai</p><a class="to-top" href="#home">↑ Back to top</a></div>
+  </footer>
+  <a class="wa-float" id="waFloat" href="https://wa.me/917708365498?text=Hi%20Kalki%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect." target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i><span>Chat with me</span></a>
+
+  <div class="modal" id="resumeModal" role="dialog" aria-modal="true" aria-label="Resume preview" aria-hidden="true">
+    <div class="modal-box">
+      <div class="modal-head"><h3>Resume · Kalki Hema Priya R</h3>
+        <div class="modal-actions"><a class="btn outline" href="resume/Kalki-Hema-Priya-Resume.pdf" download>↓ Download</a><a class="btn outline" href="resume/Kalki-Hema-Priya-Resume.pdf" target="_blank" rel="noopener">Open in new tab</a><button class="modal-close" type="button" aria-label="Close preview">✕</button></div></div>
+      <iframe id="resumeFrame" title="Resume PDF preview"></iframe>
+      <p class="modal-note">Preview not showing on your phone? Use Download or Open in new tab.</p>
+    </div>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>

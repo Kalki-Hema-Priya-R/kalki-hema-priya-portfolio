@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#05060f"><meta name="robots" content="noindex">
+<title>You're offline | Kalki Hema Priya</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2064%2064%27%3E%3Cdefs%3E%3ClinearGradient%20id%3D%27g%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%271%27%20y2%3D%271%27%3E%3Cstop%20stop-color%3D%27%236ea8ff%27/%3E%3Cstop%20offset%3D%27.55%27%20stop-color%3D%27%23a678ff%27/%3E%3Cstop%20offset%3D%271%27%20stop-color%3D%27%23ff7ac6%27/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%2764%27%20height%3D%2764%27%20rx%3D%2716%27%20fill%3D%27%2305060f%27/%3E%3Cpath%20d%3D%27M32%2010l5%2017%2017%205-17%205-5%2017-5-17-17-5%2017-5z%27%20fill%3D%27url%28%23g%29%27/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>:root{--bg:#05060f;--panel:rgba(255,255,255,.04);--panel-h:rgba(255,255,255,.07);--text:#f4f5ff;--muted:#9ea6c4;--line:rgba(255,255,255,.09);--a:#6ea8ff;--b:#a678ff;--c:#ff7ac6;--grad:linear-gradient(120deg,var(--a),var(--b) 55%,var(--c))}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(600px 400px at 85% 8%,rgba(110,168,255,.18),transparent),radial-gradient(500px 500px at 8% 40%,rgba(166,120,255,.15),transparent),radial-gradient(500px 400px at 70% 90%,rgba(255,122,198,.09),transparent)}
+body::after{content:"";position:fixed;inset:0;z-index:-1;background-image:radial-gradient(rgba(255,255,255,.07) 1px,transparent 1px);background-size:34px 34px;mask-image:radial-gradient(ellipse at 50% 40%,#000,transparent 75%);-webkit-mask-image:radial-gradient(ellipse at 50% 40%,#000,transparent 75%)}
+a{color:inherit;text-decoration:none}
+.btn{padding:14px 24px;border-radius:999px;font-weight:700;font-size:14px;transition:.3s;display:inline-flex;gap:8px;align-items:center;cursor:pointer;border:0;color:var(--text);font-family:inherit}
+.btn.primary{background:var(--grad);color:#0a0b1a;box-shadow:0 14px 34px rgba(110,168,255,.25)}.btn.outline{border:1px solid rgba(255,255,255,.18);background:var(--panel)}.btn:hover{transform:translateY(-3px)}.btn.outline:hover{background:var(--panel-h);border-color:var(--a)}
+.status{min-height:100vh;display:grid;place-items:center;padding:30px;text-align:center}
+.status-card{max-width:620px;width:100%;padding:54px 40px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:32px;-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);box-shadow:0 30px 90px rgba(0,0,0,.45);animation:rise .8s cubic-bezier(.2,.7,.2,1)}
+@keyframes rise{from{opacity:0;transform:translateY(30px)}}
+.big{font-size:clamp(90px,22vw,170px);font-weight:800;line-height:1;letter-spacing:-8px;background:linear-gradient(120deg,#6ea8ff,#a678ff 55%,#ff7ac6);-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% auto;animation:flow 6s linear infinite,float 4s ease-in-out infinite}
+.big.emoji{background:none;-webkit-text-fill-color:currentColor;color:#fff;font-size:88px;letter-spacing:0;line-height:1.3;margin-bottom:6px;animation:float 4s ease-in-out infinite}
+@keyframes flow{to{background-position:200% center}}@keyframes float{50%{transform:translateY(-10px)}}
+.status h1{font-size:clamp(24px,4vw,34px);margin:14px 0 10px;letter-spacing:-1px}.status p{color:var(--muted);margin-bottom:26px}
+.row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.quick{margin-top:30px;padding-top:22px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}.quick a{margin:0 9px;color:#bcd5ff}.quick a:hover{text-decoration:underline}
+.pulse{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--c);margin-right:8px;animation:p 1.4s infinite}.pulse.ok{background:#6ff0b4}@keyframes p{50%{opacity:.25;transform:scale(1.5)}}
+.badge{display:inline-block;font-size:12px;padding:6px 14px;border:1px solid rgba(255,255,255,.12);border-radius:999px;margin-bottom:18px;color:#cfd6f5}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}</style></head>
+<body><main class="status"><div class="status-card">
+<div class="big emoji">📡</div><span class="badge" id="st"><i class="pulse"></i>No internet connection</span>
+<h1>You're offline</h1>
+<p>It looks like your connection dropped. Check your Wi-Fi or mobile data. This page will reload by itself as soon as you're back online.</p>
+<div class="row"><button class="btn primary" type="button" onclick="location.reload()">↻ Try Again</button><a class="btn outline" data-to="">Open Portfolio</a></div>
+<div class="quick">Tip: pages you've already visited may still open offline.</div>
+</div></main>
+<script>const FILE=location.protocol==='file:';
+const BASE=location.pathname.startsWith('/kalki-hema-priya-portfolio/')?'/kalki-hema-priya-portfolio/':'/';
+const ROOT=FILE?'index.html':BASE;
+document.querySelectorAll('[data-to]').forEach(a=>a.href=ROOT+a.dataset.to);
+const st=document.getElementById('st');
+function up(){st.innerHTML='<i class="pulse ok"></i>Back online, reloading…';setTimeout(()=>location.href=ROOT,900)}
+addEventListener('online',up);
+if(navigator.onLine&&!FILE)up();</script></body></html>

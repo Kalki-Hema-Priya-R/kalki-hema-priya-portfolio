@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://kalki-hema-priya-r.github.io/kalki-hema-priya-portfolio/sitemap.xml
